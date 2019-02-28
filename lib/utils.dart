@@ -8,4 +8,8 @@ class Utils {
     });
     return p;
   }
+
+  static String formatDouble(double d) {
+    return d.toStringAsFixed(2);
+  }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pizza_calculator/pizza.dart';
+import 'package:pizza_calculator/utils.dart';
 
 typedef DeletePizzaItem = void Function(Pizza p);
 typedef UpdatePizzaItem = void Function(Pizza p);
@@ -57,7 +58,8 @@ class PizzaCalculatorItem extends StatelessWidget {
                   child: Row(
                     children: <Widget>[
                       Icon(Icons.attach_money),
-                      Text("${_pizza.price.toString()}", style: smallTextStyle),
+                      Text("${Utils.formatDouble(_pizza.price)}",
+                          style: smallTextStyle),
                     ],
                   ),
                 ),
@@ -65,11 +67,13 @@ class PizzaCalculatorItem extends StatelessWidget {
                   child: Row(
                     children: <Widget>[
                       Icon(Icons.aspect_ratio),
-                      Text(" ${_pizza.size.toString()}", style: smallTextStyle),
+                      Text(" ${Utils.formatDouble(_pizza.size)}",
+                          style: smallTextStyle),
                     ],
                   ),
                 ),
                 Expanded(
+                  flex: 2,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
@@ -77,7 +81,7 @@ class PizzaCalculatorItem extends StatelessWidget {
                         "\$/Size ",
                         style: ratioTextStyle,
                       ),
-                      Text("${_pizza.pricePerSize.toString()}",
+                      Text("${Utils.formatDouble(_pizza.pricePerSize)}",
                           style: ratioTextStyle),
                     ],
                   ),

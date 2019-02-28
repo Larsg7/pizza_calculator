@@ -46,8 +46,8 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
-  final List<Pizza> _pizzas = [Pizza("test", 1, 2)];
-  Pizza _lastDeletedPizza = null;
+  final List<Pizza> _pizzas = [];
+  Pizza _lastDeletedPizza;
 
   void _onAddNewPizza(Pizza p) {
     Scaffold.of(context)
